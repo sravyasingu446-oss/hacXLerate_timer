@@ -19,7 +19,7 @@ The interface is intentionally bold and event-focused, matching the style of a h
 
 ## Project structure
 
-- `timer.html` — complete app with HTML, CSS, and JavaScript in one file
+- `index.html` — complete app with HTML, CSS, and JavaScript in one file
 - `README.md` — project documentation
 
 ## Features
@@ -47,7 +47,7 @@ The timer deadline is saved in `localStorage` under the key `hx`, so refreshing 
 Because this is a static HTML file, there are no dependencies or build steps.
 
 Option 1: Open directly in a browser
-- Open `timer.html` in any modern browser
+- Open `index.html` in any modern browser
 
 Option 2: Serve it locally
 From the project folder:
@@ -59,8 +59,19 @@ python -m http.server 8000
 Then open:
 
 ```text
-http://localhost:8000/timer.html
+http://localhost:8000/
 ```
+
+The site root serves the timer directly from `index.html`.
+
+## Deploy to Vercel or Netlify
+
+This project is static and needs no build command or dependencies. The repository root is the publish/output directory.
+
+1. Push this project to a GitHub repository.
+2. Import that repository in [Vercel](https://vercel.com/new) or [Netlify](https://app.netlify.com/start).
+3. Leave the build command empty and set the output/publish directory to `.` (the repository root), if prompted.
+4. Deploy. The site URL opens the timer directly.
 
 ## Behavior notes
 
@@ -71,7 +82,7 @@ http://localhost:8000/timer.html
 
 ## Customization
 
-You can easily adjust the app by editing the constants in `timer.html`:
+You can easily adjust the app by editing the constants in `index.html`:
 
 - `T = 24 * 3600 * 1000` controls the total countdown duration
 - CSS variables and text can be changed directly in the `<style>` section
